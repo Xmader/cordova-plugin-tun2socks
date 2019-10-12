@@ -10,9 +10,11 @@ window.tun2socks._genericHandler = function(method, params) {
   });
 };
 
-module.exports = {
+Object.assign(window.tun2socks, {
   start: window.tun2socks._genericHandler.bind({}, "start"),
   stop: window.tun2socks._genericHandler.bind({}, "stop"),
   onDisconnect: window.tun2socks._genericHandler.bind({}, "onDisconnect"),
   deviceSupportsPlugin: window.tun2socks._genericHandler.bind({}, "deviceSupportsPlugin")
-};
+});
+
+module.exports = window.tun2socks;
