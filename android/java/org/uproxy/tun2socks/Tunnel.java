@@ -155,7 +155,7 @@ public class Tunnel {
                 .addAddress(mPrivateAddress.mIpAddress, mPrivateAddress.mPrefixLength)
                 .addRoute("0.0.0.0", 0)
                 .addDnsServer(DNS_RESOLVER_IP)
-                .addDisallowedApplication(mHostService.getContext().getPackageName())
+                .addAllowedApplication("com.ChillyRoom.DungeonShooter")
                 .establish();
       } catch (NameNotFoundException e) {
         mHostService.onDiagnosticMessage(
